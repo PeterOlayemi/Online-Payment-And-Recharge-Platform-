@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+    <title>Miracle TC</title>
+    <style>
+        table {font-family: Arial, Helvetica, sans-serif; border-collapse: collapse;width: 50%; text-align: center;}
+        td, th{border: 1px solid #dddddd; text-align: left; padding: 8px;}
+        tr:nth-child(even) {background-color: #dddddd;}
+
+.sidebar-module {
+    padding: 10px;
+            margin: 0 35px 0px;
+        }
+        .sidebar-module-inset {
+            padding: 15px;
+            background-color: #ecebeb;
+            border-radius: 15px;
+        }
+        .sidebar-inset {
+            padding: 15px;
+            background-color: lightblue;
+            border-radius: 15px;
+        }
+        .sidebar-module-inset p:last-child,
+        .sidebar-module-inset ul:last-child,
+        .sidebar-module-inset ol:last-child {
+                            margin-bottom: 0;
+                        }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+  padding-top: 35px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+body {color: black; font-size: 15px;}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<script>
+function saydelete() {alert('This Account Details Will Be Deleted...')}
+
+function saydefault() {alert('This Account Has Been Selected As Your Default Account...')}
+
+function sayquery() {alert('Transaction Query Is Successful. This Transaction Will Be Checked And Rectified within 24 hours. Please Bear With Us.')}
+
+function saychanger() {alert('Saving Changes...')}
+
+function saywith() {alert('Processing Withdrawal...')}
+
+function sayadd() {alert('Adding Details...')}
+
+function saybuy() {alert('Loading Purchase...')}
+
+function saylogout() {alert('Goodbye User... We Hope To See You Soon')}
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+    </head>
+<body>
+<div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<a style="padding-right: 50px;" href="{% url 'user:dashboard' %}">
+	<center>
+		<img src="https://portal.mobilenig.com/dashboardStyles/img/logo.ico" class="img-fluid mb-2" alt="MOBILENIG" style="width: 15%;"><b>MIRACLE TC</b>
+	</center><br>
+</a>
+<div style="background-color:white; text-align: center;">
+<div style="color: black;font-size: 20px;" class="font-weight-bold">{{ user.username|title}}</div><br>
+<small style="color: black;font-size: 18px;">Wallet: ₦{% for data in data%}{{data.balance}}{%endfor%}</small>
+</div>
+   <ul> <a href="#"><small><i>Main</i></small></a>
+  <li><a href="{%url 'user:dashboard'%}">Dashboard</a>
+  <li><a href="{%url 'user:center'%}">Resolution Center</a>
+    <a href="#"><small><i>Our Services</i></small></a>
+  <li><a href="{% url 'user:buydata' %}">Buy Data</a>
+    <li><a href="{% url 'user:bill' %}">Pay Bills</a>
+  <li><a href="{% url 'user:buyairtime' %}">Buy Airtime VTU</a>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Channels<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="https://wa.me/08030896456">WhatsApp</a></li>
+            <li><a href="tel:08030896456">Call/SMS</a></li>
+        </ul>
+    </li>
+    <a href="#"><small><i>Extras</i></small></a>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Wallet<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="{%url 'user:fund'%}">Fund Wallet</a></li>
+            <li><a href="{% url 'user:bank' %}">Add Bank Details</a></li>
+            <li><a href="{% url 'user:withdraw' %}">Withdraw Fund</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="{% url 'account:profile' %}">My Profile</a></li>
+            <li><a href="{%url 'user:faq'%}">FAQs</a></li>
+        </ul>
+    </li>
+
+    <li><a href="{% url 'account:logout'%}" onclick="saylogout()">Log Out</a><br><br><br><br><br><br><br><br><br><br>
+</div>
+<span style="cursor:pointer; font-size: 30px;" onclick="openNav()">&#9776;</span>
+
+</div>
+</body>
+{% block content %} {% endblock%}

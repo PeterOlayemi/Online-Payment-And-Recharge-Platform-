@@ -1,0 +1,55 @@
+{% extends "user/base.html" %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+    <title>Miracle TC - Buy Airtime</title>
+    </head>
+<body>
+
+{% block content %}
+<div style="background-color:black; color: white;">
+<br><br><div style="font-size: 25px; padding-left: 50px;">Query Airtime Transactions</div><br><div style="padding-left: 50px;"><a style="color: lightblue;" href="{%url 'user:dashboard'%}">Dashboard /</a> <a style="color: lightblue;" href="#">Query Airtime Transactions</a><br></div></div><br>
+<div class="col-lg-12">
+<h3>Airtime Transaction History</h3><br>
+<table height="300" align="center">
+    <tr>
+        <th>Date</th>
+        <th>Transaction ID</th>
+        <th>Service</th>
+        <th>Phone Number</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+        <th>Date Updated</th>
+    </tr>
+
+{% for data in air %}
+    <tr>
+        <td>{{ data.date }}</td>
+        <td>{{ data.uuid }}</td>
+        <td><br><br><br><br><br><br>{{ data.choose_network }}</td>
+        <td><br><br>{{ data.phone_number }}</td>
+        <td>₦{{ data.amount }}</td>
+        <td>{{ data.status }}</td>
+        <td>{% if data.queried == True %}<span>Queried</span>{% else %}<a href="{% url 'user:queryair' _id=data.id%}" onclick="sayquery()" class="btn btn-danger">Query</a>{% endif %}</td>
+        <td>{{ data.date_updated }}</td>
+    </tr>
+{%empty%}
+<h3 style="padding-left: 100px;">You Haven't Purchased Airtime From Miracle TC</h3><br><hr><br>
+
+{%endfor%}
+</table>
+</div>
+<br><hr><br>
+<div class="col-lg-12" style="padding-left:60px;"><a href="{% url 'account:term'%}" style="color: blue;">Terms Of Service || </a> <a href="{% url 'account:privacy'%}" style="color: blue;">Privacy Policy || </a> <a href="{% url 'data:contact'%}" style="color: blue;">Contact</a><div style="text-align:right">Miracle TC Digital Services</div></div>
+</body>
+{% endblock%}

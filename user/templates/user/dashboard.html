@@ -1,0 +1,55 @@
+{% extends "user/base.html" %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+    <title>Miracle TC - Dashboard</title>
+    </head>
+<body>
+
+{% block content %}
+<div style="background-color:black; color: white;"><br><br><div style="font-size: 25px; padding-left: 50px;">Welcome Back, {{user.username|upper}}</div><br><div style="padding-left: 50px;">At Miracle TC, we keep you connected.<br><br><br><a style="color: lightblue;" href="{%url 'data:home'%}">Home / </a><a style="color: lightblue;" href="{%url 'user:dashboard'%}"> Dashboard</a><br></div></div>
+<div class="col-lg-2 sidebar-module sidebar-module-inset">
+Wallet Balance<br><br><div style="font-size:25px;">
+₦{% for date in data%}{{date.balance}}</div><br><a href="{%url 'user:fund'%}" style="color:crimson">Fund Wallet</a>
+</div><br>
+<div class="col-lg-2 sidebar-module sidebar-module-inset">
+Account Status<br><br><div style="font-size:25px;">{{date.account_status}}</div><br>
+</div><br>
+<div class="col-lg-2 sidebar-module sidebar-module-inset">
+User Type<br><br><div style="font-size:25px;">{{date.user_type}}{%endfor%}</div><br>
+</div><br>
+<div class="col-lg-2 sidebar-module sidebar-module-inset">
+WhatsApp/Call<br><br><div style="font-size:25px;">08030896456</div><br><a href="https://wa.me/08030896456" style="color:crimson">Chat Us Here</a>
+</div><br><br>
+<div class="col-lg-11 sidebar-module sidebar-module-inset" style="max-width: 100%;">
+<h3>Account Details</h3>
+<p>You can deposit or transfer fund into this Miracle TC account details to get credited instantly. You can pay any amount, at any time, using any means (Website, Mobile App, USSD, ATM, POS e.t.c) to the Miracle TC account number to credit your wallet instantly.
+<br><br><strong>Please note that there is a charge of 1% for payments made into your unique Miracle TC account number. This means, if you pay #1000, #10 charge would be deducted. If you pay #5000, #50 would be deducted.</strong></p>
+<br><br>
+<b>Account Name</b>: Miracle TC User<hr>
+<b>Account Number</b>: 2005022112<hr>
+<b>Bank Name</b>: United Bank For Africa<hr>
+</div><br><br>
+<div class="col-lg-11 sidebar-module sidebar-module-inset" style="max-width: 100%;">
+<h3>Quick Links</h3><hr>
+<a href="{% url 'user:buydata' %}" style="color:crimson">Buy Data</a><hr>
+<a href="{% url 'user:buyairtime' %}" style="color:crimson">Airtime VTU</a><hr>
+<a href="{% url 'user:bill' %}" style="color:crimson">Pay Bills</a><hr>
+<a href="{% url 'user:fund' %}" style="color:crimson">Fund Wallet</a><hr>
+<a href="{% url 'user:withdraw' %}" style="color:crimson">Withdraw Fund</a><hr>
+<a href="https://wa.me/08030896456" style="color:crimson">WhatsApp Channel</a><hr>
+<a href="{%url 'account:logout'%}" onclick="saylogout()" style="color:crimson">Logout</a>
+</div>
+<br><hr><br>
+<div class="col-lg-12" style="padding-left:60px;"><a href="{% url 'account:term'%}" style="color: blue;">Terms Of Service || </a> <a href="{% url 'account:privacy'%}" style="color: blue;">Privacy Policy || </a> <a href="{% url 'data:contact'%}" style="color: blue;">Contact</a><div style="text-align:right">Miracle TC Digital Services</div></div>
+
+{% endblock%}

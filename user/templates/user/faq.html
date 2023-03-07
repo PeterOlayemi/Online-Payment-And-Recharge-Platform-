@@ -1,0 +1,33 @@
+{% extends "user/base.html" %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+    <title>Miracle TC - FAQs</title>
+    </head>
+<body>
+{% block content %}
+<div style="background-color:black; color: white;">
+<br><br><div style="font-size: 25px; padding-left: 50px;">FAQs</div><br><div style="padding-left: 50px;"><a style="color: lightblue;" href="{%url 'user:dashboard'%}">Dashboard /</a> <a style="color: lightblue;" href="{%url 'user:faq'%}">FAQs</a><br></div></div><br>
+<div class="col-lg-8 sidebar-module sidebar-inset">
+<h3>Frequently Asked Questions</h3><p>This is a compilation of the questions frequently asked by clients, please go through them to have a better knowledge of this platform</p>
+<div class="col-lg-11 sidebar-module sidebar-module-inset"><b>-I ordered for data, it has been successful but data not received</b></div><p style="padding-left: 60px;">Send the order details via whatsapp to your account manager, include the phone number, data volume and date of transaction.</p>
+<div class="col-lg-11 sidebar-module sidebar-module-inset"><b>-My data order was cancelled but my wallet was not refunded</b></div>
+<p style="padding-left: 60px;">Send the order details via whatsapp to your account manager. The refund should be processed within 24 hours.</p>
+<div class="col-lg-11 sidebar-module sidebar-module-inset"><b>-I paid into your bank account but my wallet was not auto-credited</b></div>
+<p style="padding-left: 60px;">Please chat your account manager via whatsapp, send the amount paid, date of payment and your username.</p>
+<div class="col-lg-11 sidebar-module sidebar-module-inset"><b>-What's your working hours?</b></div>
+<p style="padding-left: 60px;">All our products are available 24/7, our customer helpdesk is available 24/7</p>
+</div>
+<br><hr><br>
+<div class="col-lg-12" style="padding-left:60px;"><a href="{% url 'account:term'%}" style="color: blue;">Terms Of Service || </a> <a href="{% url 'account:privacy'%}" style="color: blue;">Privacy Policy || </a> <a href="{% url 'data:contact'%}" style="color: blue;">Contact</a><div style="text-align:right">Miracle TC Digital Services</div></div>
+</body>
+{% endblock%}

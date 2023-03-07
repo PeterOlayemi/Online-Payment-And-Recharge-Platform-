@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+        <title>Miracle TC - Sign In</title>
+        <style>
+            .sidebar-module {
+            padding: 10px;
+            margin: 0 35px 0px;
+            }
+            .sidebar-module-inset {
+            padding: 15px;
+            background-color: #e6e1e1;
+            border-radius: 30px;
+            }
+            .sidebar-module-inset p:last-child,
+            .sidebar-module-inset ul:last-child,
+            .sidebar-module-inset ol:last-child {
+            margin-bottom: 0;
+            }
+            .project{  
+      background-color: black;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      max-width: 100%;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+            }
+        </style>
+    <script>
+        function saylogin() { alert("Checking Login Details...")}
+    </script>
+    </head>
+{% block content %}
+<body style="color:black" class="project">
+<div style="max-width:100%;" class="col-lg-3 sidebar-module sidebar-module-inset">
+<form method = 'post'>
+    <div class="text-center" style="color:darkgreen"><img src="https://portal.mobilenig.com/dashboardStyles/img/logo.ico" width="50"><h1><b>MIRACLE TC</b></h1></div><br>
+    <h2>Login Now</h2><br><br>
+    {% csrf_token %}
+    {{form.as_p}}
+	<div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <div  style="text-align: right;">
+
+        <button class="btn btn-success" onclick="saylogin()">Log In</button>
+
+    </div>
+    <div>
+	    <a href="{% url 'account:password_reset' %}">Forgot password?</a>
+    </div>
+
+</form><br>
+    <div class="text-center">Don't have an account? <a href = "{% url 'account:signup' %}" class="btn btn-info"> Sign Up</a></div><br><br>
+<!-- copyright -->
+	<div style="text-align: center;">
+		<p>Miracle TC | Designed by PeterCodes Technologies</p>
+	</div>
+<!-- //copyright -->
+
+</div>
+</body>
+{%endblock%}

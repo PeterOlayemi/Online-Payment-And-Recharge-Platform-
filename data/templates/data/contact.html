@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+        <title>Miracle TC - Contact</title>
+        <style>
+            .carouse {
+                height: 500px;
+                margin-bottom: 60px;
+                max-width: 100%;
+                }
+            .carouse .iteme {
+                height: 500px;
+                background-color: rgba(16, 250, 8, 0.726);
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+    {% extends "data/base.html" %}
+
+{% block header %}
+
+    <div class="carouse slide">
+        <div class="carousel-inner" role="listbox">
+        <div class="iteme active">
+          <img class="first-slide" src="#" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+                <h1>Contact Us</h1><br>
+              <h4>A TeleCommunication Company Located In Lagos, Nigeria</h4><br><br>
+              <p><a style="color:white" class="btn btn-lg btn-success" href="{% url 'account:signup' %}" role="button">Get Started  </a>  <a style="color:white" class="btn btn-lg btn-primary" href="{% url 'account:login' %}" role="button">  Log In</a></p>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock header %}
+
+{% block content %}
+<div style="text-align:center; color: black; font-size: large; max-width: 100%;">
+<h3>Reach Out To Us</h3><br><p>We are commited to serving you better</p>
+<div class="col-lg-3 sidebar-module sidebar-module-inset">
+<h3>Our Location</h3><br><p>Michael Street, Mushin, Ibadan, Nigeria</p>
+</div><br>
+<div class="col-lg-3 sidebar-module sidebar-module-inset">
+<h3>Customer Support</h3><br><p><a href="tel:08030896456">Call/WhatsApp: 08030896456</a></p>
+</div><br>
+<div class="col-lg-3 sidebar-module sidebar-module-inset" style="max-width: 100%;">
+<h3>Help Desk</h3><br><p><a href="mailto:helpdesk@miracletc.com">helpdesk@miracletc.com</a></p>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<footer style="max-width: 100%;" class="w3l-project">
+{% for image1 in image1 %}
+{% for image10 in image10 %}
+{% for image8 in image8 %}
+<style>
+    .w3l-project {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url('{{ image1.image1.url }}');      
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      max-width: 100%;
+      color: white;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -ms-background-size: cover;
+    }
+  </style>
+      <div class="container">
+          <div class="col-lg-4">
+            <a class="navbar-brand" href="#"><h3>MIRACLE TC</h3></a><br><br><br><br>
+            <p>Owned by Peter Olayemi, offers best deals when it comes to internet Data Plans, Bills payment like GOTV, DSTV &amp; STARTIMES.</p>
+          </div>
+  
+          <div class="col-lg-4">
+            <h3>CONTACT INFO </h3>
+            <p>Address : Michael Street, Mushin, Lagos, Nigeria</p>
+            <p>Customer Support : <a href="tel:08030896456">08030896456</a></p>
+            <p>Email : <a href="mailto:helpdesk@miracletc.com">helpdesk@miracletc.com</a></p>
+          </div>
+
+          <div class="col-lg-2">
+            <ul>
+              <h3>PRODUCTS</h3>
+              <li><a href="{% url 'user:buydata' %}">Data Subscription</a></li>
+              <li><a href="{% url 'user:bill' %}">Bills Payment</a></li>
+              <li><a href="{% url 'user:buyairtime' %}">VTU Recharge</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-2">
+            <ul>
+              <h3>COMPANY</h3>
+              <li><a href="{% url 'data:about' %}"> About Company</a></li>
+              <li><a href="{% url 'data:contact' %}">Get In Touch</a><br><a href="https://play.google.com/store/apps/details?id=com.twitter.android"><img src="{{ image8.image8.url }}" alt="Generic placeholder image" width="100" height="50"></a></li>
+              </ul>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+    <!-- copyright -->
+<br><br>
+      <div class="container" style="text-align:center">
+        <p>&copy; PeterCodes &middot;</p>
+      <p style="position: fixed; bottom: 10px; left: 10px;"><a href="https://wa.me/08030896456"><img src="{{ image10.image10.url }}" alt="Generic placeholder image" width="70" height="70"></a></p>	  
+{%endfor%}{%endfor%}{%endfor%}
+        <p><a href="#">Back To Top</a></p>
+      </div>
+</footer>
+</body>
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "user/base.html" %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+    <title>Miracle TC - Fund Wallet</title>
+    </head>
+
+<body>
+
+{% block content %}
+
+<div style="background-color:black; color: white;">
+<br><br><div style="font-size: 25px; padding-left: 50px;">Fund Wallet</div><br><div style="padding-left: 50px;"><a style="color: lightblue;" href="{%url 'user:dashboard'%}">Dashboard /</a> <a style="color: lightblue;" href="{%url 'user:fund'%}">Fund Wallet</a><br></div></div><br>
+<div class="col-lg-11 sidebar-module sidebar-module-inset">
+<h3>Fund Wallet Via Our Miracle TC Account</h3><br>Miracle TC wallet can be used to pay for any of our products and services. Funding the wallet is quite easy.<br><br><h2>Bank Transfer</h2>You can deposit or transfer fund into this Miracle TC account details to get credited instantly. You can pay any amount, at any time, using any means (Website, Mobile App, USSD, ATM, POS e.t.c) to the Miracle TC account number to credit your wallet instantly.
+<br><br><strong>Please note that there is a charge of 1% for payments made into your unique MobileNig account number. This means, if you pay #1000, #10 charge would be deducted. If you pay #5000, #50 would be deducted.</strong><br>Your account will be funded as soon as your payment is confirmed (within 5 minutes).</p>
+<br><br>
+<b>Account Name</b>: Miracle TC User<hr>
+<b>Account Number</b>: 2005022112<hr>
+<b>Bank Name</b>: United Bank For Africa<hr>
+
+</div><br><hr><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="padding-left:60px;"><a href="{% url 'account:term'%}" style="color: blue;">Terms Of Service || </a> <a href="{% url 'account:privacy'%}" style="color: blue;">Privacy Policy || </a> <a href="{% url 'data:contact'%}" style="color: blue;">Contact</a><div style="text-align:right">Miracle TC Digital Services</div></div>
+</body>
+{% endblock%}

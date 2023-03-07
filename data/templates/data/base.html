@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="https://portal.mobilenig.com/dashboardStyles/img/logo.ico">
+
+    <title>Miracle TC</title>
+<style>
+/* GLOBAL STYLES
+ * Padding below the footer and lighter body text
+* -------------------------------------------------- */
+a:link {color: green;}
+a:visited {color: green;}
+a:hover {color: green;}
+a:active {color: green;}
+
+body {
+  padding-bottom: 400px;
+  color: #5a5a5a;
+}
+
+.sidebar-module {
+    padding: 10px;
+            margin: 0 35px 0px;
+        }
+        .sidebar-module-inset {
+            padding: 15px;
+            background-color: #ecebeb;
+            border-radius: 30px;
+        }
+        .sidebar-module-inset p:last-child,
+        .sidebar-module-inset ul:last-child,
+        .sidebar-module-inset ol:last-child {
+                            margin-bottom: 0;
+                        }
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 600px;
+  margin-bottom: 60px;
+}
+.carousel-caption {
+  z-index: 10; /* Since positioning the image, we need to help out the caption */
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 600px;
+  background-color: rgba(16, 250, 8, 0.726);
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 4px; /* The navbar becomes detached from the top, so we round the corners */
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+</style>
+  </head>
+
+  <body>
+    <div style="max-width: 100%;" class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><div style="color:green; font-size: larger;"><img src="https://portal.mobilenig.com/dashboardStyles/img/logo.ico" width="40"> <b>MIRACLE TC</b></div></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                
+                <li><a href="{% url 'data:home' %}"><div style="color: black; font-size: large;">Home</div></a></li>
+                <li><a href="{% url 'data:about' %}"><div style="color: black; font-size: large;">About</div></a></li>
+                <li><a href="{% url 'data:contact' %}"><div style="color: black; font-size: large;">Contact</div></a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{% url 'data:home' %}"><div style="color: black; font-size: large;">Services</div></a></li>
+                <li><a href="{% url 'data:pricing' %}"><div style="color: black; font-size: large;">Pricing</div></a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+  </body>
+{% block header %} {% endblock%}
+
+{% block content %} {% endblock%}
