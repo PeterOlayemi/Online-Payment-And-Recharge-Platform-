@@ -1,4 +1,5 @@
 {% extends "data/base.html" %}
+{% load static %}
 
 {% block content %}
     <!-- Carousel
@@ -60,25 +61,21 @@
       <!-- Three columns of text below the carousel -->
       <div class="row" style="max-width: 100%;">
         <div class="col-lg-3 sidebar-module sidebar-module-inset"><br><br>
-{% for image5 in image5 %}
-          <img class="img-responsive" src="{{ image5.image5.url }}" alt="Generic placeholder image" width="200" height="200"><br><br>
-{%endfor%}
+          <img class="img-responsive" src="{% static 'vtu.jpg' %}" alt="Generic placeholder" width="200" height="200"><br><br>
           <h2>Airtime VTU</h2><br><br>
           <h4>Get 10-20% Discount On Airtime Purchase For All Networks</h4><br><br>
           <p><a style="color:white" class="btn btn-success" href="{% url 'user:buyairtime' %}" role="button">Buy Airtime &raquo;</a></p>
         </div><br>
         <div class="col-lg-3 sidebar-module sidebar-module-inset"><br><br>
-{% for image2 in image2 %}
-          <img class="img-responsive" src="{{ image2.image2.url }}" alt="Generic placeholder image" width="200" height="200"><br><br>
-{%endfor%}
+          <img class="img-responsive" src="{% static 'bills.jpg' %}" alt="Generic placeholder image" width="200" height="200"><br><br>
+
           <h2>Pay Bills</h2><br><br>
           <h4>Get 5-10% Discount On GOTV, DSTV, Startimes, Electricity Bills, NECO And WAEC Scratch Cards</h4><br><br>
           <p><a style="color:white" class="btn btn-success" href="{% url 'user:bill' %}" role="button">Pay Bills &raquo;</a></p>
         </div><!-- /.col-lg-4 --><br>
         <div class="col-lg-3 sidebar-module sidebar-module-inset"><br><br>
-{% for image4 in image4 %}
-          <img class="img-responsive" src="{{ image4.image4.url }}" alt="Generic placeholder image" width="200" height="200"><br><br>
-{%endfor%}
+          <img class="img-responsive" src="{% static 'vtu.jpg' %}" alt="Generic placeholder image" width="200" height="200"><br><br>
+
           <h2>Buy Data</h2><br><br>
           <h4>Buy Data For As Low As 100/GB For All Networks</h4><br><br>
           <p><a style="color:white" class="btn btn-success" href="{% url 'user:buydata' %}" role="button">Buy Data &raquo;</a></p>
@@ -91,11 +88,9 @@
       <hr class="featurette-divider">
 
       <div style="max-width: 100%;" class="row featurette">
-        {% for image2 in image2 %}
         <div class="col-md-5">
-          <br><br><br><br><br><br><br><br><br><img style="max-width: 100%;" class="featurette-image img-responsive" src="{{ image2.image2.url }}" alt="Generic placeholder image">
+          <br><br><br><br><br><br><br><br><br><img style="max-width: 100%;" class="featurette-image img-responsive" src="{% static 'why.jpg' %}" alt="Generic placeholder image">
         </div><br>
-        {%endfor%}
         <div class="col-md-7" style="color: black; max-width: 100%;">
                     <h2 class="featurette-heading">Why Choose Us?</h2>
                     <h2 class="text-muted">We are the best at what we do.</h2><br>
@@ -139,27 +134,21 @@
             </div>
 <br><br><br><br><br><br><br><br><br>
             <div class="col-md-1 sidebar-module sidebar-module-inset">
-{% for image9 in image9 %}
                     <div class="">
                         <div class="">
-                            <a href="#" class="title-head"><img class="" src="{{ image9.image9.url }}" alt="Generic placeholder image" width="70" height="70"><h4>Website</a></h4>
+                            <a href="#" class="title-head"><img class="" src="{% static 'web.png' %}" alt="Generic placeholder image" width="70" height="70"><h4>Website</a></h4>
                         </div>
                     </div>
-{%endfor%}
             </div><br>
                     <div class="col-md-1 sidebar-module sidebar-module-inset">
-{% for image8 in image8 %}
                         <div class="icon">
-                            <a href="https://play.google.com/store/apps/details?id=com.twitter.android" class="title-head"><img class="" src="{{ image8.image8.url }}" alt="Generic placeholder image" width="70" height="70"><h4>Mobile App</a></h4>
+                            <a href="https://play.google.com/store/apps/details?id=com.twitter.android" class="title-head"><img class="" src="{% static 'app.png' %}" alt="Generic placeholder image" width="70" height="70"><h4>Mobile App</a></h4>
                         </div>
-{%endfor%}
                     </div><br>
                     <div class="col-md-1 sidebar-module sidebar-module-inset">
-{% for image10 in image10 %}
                         <div class="icon">
-                            <a href="https://wa.me/08030896456"><img class="" src="{{ image10.image10.url }}" alt="Generic placeholder image" width="70" height="70"><h4>WhatsApp</a></h4>
+                            <a href="https://wa.me/08030896456"><img class="" src="{% static 'wa.png' %}" alt="Generic placeholder image" width="70" height="70"><h4>WhatsApp</a></h4>
                         </div>
-{%endfor%}
                     </div>                    
             </div>
 
@@ -170,23 +159,19 @@
           <h2 class="featurette-heading">Oh Yeah, It's that good. <br><br><span class="text-muted">See For Yourself.</span></h2>
           <p class="lead">Enjoy an awesome experience with beautiful interface while using our platform.<br> Each user on our platform has a dedicated wallet which can be used to make all transaction. <br> Everything you do is secure, we keep your digital wallet safe at all time.</p>
         </div>
-{% for image1 in image1 %}
         <div class="col-md-5 col-md-pull-7">
-          <br><br><br><br><br><br><br><img style="max-width: 100%;" class="featurette-image img-responsive center-block" src="{{ image1.image1.url }}" alt="Generic placeholder image">
+          <br><br><br><br><br><br><br><img style="max-width: 100%;" class="featurette-image img-responsive center-block" src="{% static 'bills.jpg' %}" alt="Generic placeholder image">
         </div>
-{%endfor%}
       </div>
 
       <hr class="featurette-divider">
     </div>
       <!-- /END THE FEATURETTES -->
-<footer style="max-width: 100%;" class="w3l-project">
-{% for image1 in image1 %}
-{% for image10 in image10 %}
-{% for image8 in image8 %}
+<footer style="max-width: 100%; " class="w3l-project">
+
 <style>
     .w3l-project {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url('{{ image1.image1.url }}');      
+      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));      
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -224,7 +209,7 @@
             <ul>
               <h3>COMPANY</h3>
               <li><a href="{% url 'data:about' %}"> About Company</a></li>
-              <li><a href="{% url 'data:contact' %}">Get In Touch</a><br><a href="https://play.google.com/store/apps/details?id=com.twitter.android"><img src="{{ image8.image8.url }}" alt="Generic placeholder image" width="100" height="50"></a></li>
+              <li><a href="{% url 'data:contact' %}">Get In Touch</a><br><a href="https://play.google.com/store/apps/details?id=com.twitter.android"><img src="{% static 'app.png' %}" alt="Generic placeholder image" width="100" height="50"></a></li>
               </ul>
           </div>
   
@@ -236,8 +221,7 @@
 <br><br>
       <div class="container" style="text-align:center">
         <p>&copy; PeterCodes &middot;</p>
-      <p style="position: fixed; bottom: 10px; left: 10px;"><a href="https://wa.me/08030896456"><img src="{{ image10.image10.url }}" alt="Generic placeholder image" width="70" height="70"></a></p>	  
-{%endfor%}{%endfor%}{%endfor%}
+      <p style="position: fixed; bottom: 10px; left: 10px;"><a href="https://wa.me/08030896456"><img src="{% static 'wa.png' %}" alt="Generic placeholder image" width="70" height="70"></a></p>	  
         <p><a href="#">Back To Top</a></p>
       </div>
 </footer>

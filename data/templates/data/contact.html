@@ -22,6 +22,7 @@
     </head>
     <body>
     {% extends "data/base.html" %}
+    {% load static %}
 
 {% block header %}
 
@@ -57,12 +58,9 @@
 </div>
 <br><br><br><br><br><br><br><br><br>
 <footer style="max-width: 100%;" class="w3l-project">
-{% for image1 in image1 %}
-{% for image10 in image10 %}
-{% for image8 in image8 %}
 <style>
     .w3l-project {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url('{{ image1.image1.url }}');      
+      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) );      
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -100,7 +98,7 @@
             <ul>
               <h3>COMPANY</h3>
               <li><a href="{% url 'data:about' %}"> About Company</a></li>
-              <li><a href="{% url 'data:contact' %}">Get In Touch</a><br><a href="https://play.google.com/store/apps/details?id=com.twitter.android"><img src="{{ image8.image8.url }}" alt="Generic placeholder image" width="100" height="50"></a></li>
+              <li><a href="{% url 'data:contact' %}">Get In Touch</a><br><a href="https://play.google.com/store/apps/details?id=com.twitter.android"><img src="{% static 'app.png' %}" alt="Generic placeholder image" width="100" height="50"></a></li>
               </ul>
           </div>
   
@@ -112,8 +110,7 @@
 <br><br>
       <div class="container" style="text-align:center">
         <p>&copy; PeterCodes &middot;</p>
-      <p style="position: fixed; bottom: 10px; left: 10px;"><a href="https://wa.me/08030896456"><img src="{{ image10.image10.url }}" alt="Generic placeholder image" width="70" height="70"></a></p>	  
-{%endfor%}{%endfor%}{%endfor%}
+      <p style="position: fixed; bottom: 10px; left: 10px;"><a href="https://wa.me/08030896456"><img src="{% static 'wa.png' %}" alt="Generic placeholder image" width="70" height="70"></a></p>	  
         <p><a href="#">Back To Top</a></p>
       </div>
 </footer>
