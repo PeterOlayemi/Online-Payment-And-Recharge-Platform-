@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 from .models import *
 from .forms import DataForm, AirtimeForm, BankForm, WithForm, ElectForm, EducationForm, CableForm
@@ -159,8 +160,43 @@ def sock(request):
 
 @login_required
 def fund(request):
+    obj = Payment.objects.filter(user=request.user, verified=True).order_by('-date_created')
     data = Myuser.objects.filter(owner=request.user)
-    return render(request, 'user/fund.html', {'data':data})
+    if request.method == "POST":
+        email = request.POST['email']
+        amount = request.POST['amount']
+        pk = settings.PAYSTACK_PUBLIC_KEY
+        payment = Payment.objects.create(amount=amount, email=email, user=request.user)
+        payment.save()
+        
+        context = {
+			'payment': payment,
+			'field_values': request.POST,
+			'paystack_pub_key': pk,
+			'amount_value': payment.amount_value(),
+		}
+        return render(request, 'user/payment.html', context)
+    
+    return render(request, 'user/fund.html', {'data':data, 'obj':obj})
+
+@login_required
+def VerifyFundView(request, ref):
+    payment = Payment.objects.get(ref=ref)
+    verified = payment.verify_payment()
+    if verified:
+        obj = Myuser.objects.get(owner = request.user)
+        obj.balance += payment.amount
+        obj.save()
+        return render(request, "user/suc.html")
+    else:
+        return render(request, "user/error.html")
+    
+@login_required
+def QueryFundView(request, pk):
+    obj = Payment.objects.filter(user=request.user, verified =True).get(id=pk)
+    obj.queried = True
+    obj.save()
+    return redirect('user:fund')
 
 @login_required
 def center(request):

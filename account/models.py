@@ -9,7 +9,7 @@ class Myuser(models.Model):
     date_of_birth=models.DateField()
     whatsapp_enabled_phone_number = models.CharField(max_length=15)
     home_address=models.CharField(max_length=100)
-    balance= models.FloatField(default= 0.00)
+    balance= models.PositiveIntegerField(default=0)
     owner=models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:

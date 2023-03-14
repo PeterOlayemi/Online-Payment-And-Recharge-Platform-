@@ -21,14 +21,39 @@
 <div style="background-color:black; color: white;">
 <br><br><div style="font-size: 25px; padding-left: 50px;">Fund Wallet</div><br><div style="padding-left: 50px;"><a style="color: lightblue;" href="{%url 'user:dashboard'%}">Dashboard /</a> <a style="color: lightblue;" href="{%url 'user:fund'%}">Fund Wallet</a><br></div></div><br>
 <div class="col-lg-11 sidebar-module sidebar-module-inset">
-<h3>Fund Wallet Via Our Miracle TC Account</h3><br>Miracle TC wallet can be used to pay for any of our products and services. Funding the wallet is quite easy.<br><br><h2>Bank Transfer</h2>You can deposit or transfer fund into this Miracle TC account details to get credited instantly. You can pay any amount, at any time, using any means (Website, Mobile App, USSD, ATM, POS e.t.c) to the Miracle TC account number to credit your wallet instantly.
-<br><br><strong>Please note that there is a charge of 1% for payments made into your unique MobileNig account number. This means, if you pay #1000, #10 charge would be deducted. If you pay #5000, #50 would be deducted.</strong><br>Your account will be funded as soon as your payment is confirmed (within 5 minutes).</p>
-<br><br>
-<b>Account Name</b>: Miracle TC User<hr>
-<b>Account Number</b>: 2005022112<hr>
-<b>Bank Name</b>: United Bank For Africa<hr>
+<p>Fill in the form below</p>
+<form method="post">
+{%csrf_token%}
+Email: <input type="text" name="email" label="Email" id="email">
+Amount: <input type="text" name="amount" label="Amount" id="amount">
+<input type="submit" value="fund wallet">
+</form>
+</div><br><hr><br><br><br><br><br>
+<div class="col-lg-12">
+<h3>Wallet Funding Transaction History</h3><br>
+{%if obj%}
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Transaction ID</th>
+        <th>Amount</th>
+        <th>Action</th>
+    </tr>
 
-</div><br><hr><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% for data in obj %}
+    <tr>
+        <td>{{ data.date_created }}</td>
+        <td>{{ data.ref }}</td>
+        <td>₦{{ data.amount }}</td>
+        <td>{% if data.queried == True %}<span>Queried</span>{% else %}<a href="{% url 'user:queryfund' data.pk %}" onclick="sayquery()" class="btn btn-danger">Query</a>{% endif %}</td>
+    </tr>
+{%endfor%}
+</table>
+{%else%}
+<h3 style="padding-left: 100px;">You Have no wallet funding history with Miracle TC</h3><br><hr><br>
+{%endif%}
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div style="padding-left:60px;"><a href="{% url 'account:term'%}" style="color: blue;">Terms Of Service || </a> <a href="{% url 'account:privacy'%}" style="color: blue;">Privacy Policy || </a> <a href="{% url 'data:contact'%}" style="color: blue;">Contact</a><div style="text-align:right">Miracle TC Digital Services</div></div>
 </body>
 {% endblock%}

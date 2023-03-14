@@ -138,3 +138,7 @@ LOGIN_URL = 'account:login'
 LOGIN_REDIRECT_URL='account:welcome'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+PAYSTACK_SECRET_KEY = config('PAYSTACK_SECRET_KEY')
+
+PAYSTACK_PUBLIC_KEY = config('PAYSTACK_PUBLIC_KEY')
