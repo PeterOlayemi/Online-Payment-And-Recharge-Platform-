@@ -1,4 +1,4 @@
-# TeleCommunication-Site
+# Online Payment And Recharge Platform 
 A platform that allows authenticated users to fund wallet using PayStack, buy airtime, buy data, pay bills (cable TV, electricity, education), query transactions, withdraw funds, change password, get new password (forgot password feature), etc.
 
 ## Features Included
