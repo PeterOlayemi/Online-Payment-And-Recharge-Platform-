@@ -1,5 +1,5 @@
 # TeleCommunication-Site
-A E-commerce site that shows info about a telecommunication company. It allows authenticated users to fund wallet using PayStack, buy airtime, buy data, pay bills (cable TV, electricity, education), query transactions, withdraw funds, change password, get new password (forgot password feature), etc.
+A platform that allows authenticated users to fund wallet using PayStack, buy airtime, buy data, pay bills (cable TV, electricity, education), query transactions, withdraw funds, change password, get new password (forgot password feature), etc.
 
 ## Features Included
 * buy airtime, data, pay bills (cable TV, electricity, education)
